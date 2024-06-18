@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 기술 설명 페이지</title>
+    <link rel="stylesheet" type="text/css" href="./html2,3.css"/>
+    
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    
+  </head>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><span class="text-danger">P</span>ort<span class="text-danger"
+            >F</span
+          >olio</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="html.html">HTML</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="css.html">CSS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">추천서적 및 강의</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="secon.html">Team members</a>
+            </li>
+            <a class="btn btn-dark" href="login.html" role="button">로그인</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section>
+      <button class="btn btn-primary" onclick="showHide()">다시 풀어보기</button>
+     <div class="html" id="show-hide">
+        <p><section id="new2"> 
+          <form id="quizForm">
+            <script> // 자바시작
+              const element = document.getElementById("show-hide");
+              function resetQuiz() {
+    var answers = document.querySelectorAll('input[type="radio"]');
+    for (var i = 0; i < answers.length; i++) {
+        answers[i].checked = false; // 모든 선택해제하게함
+    }
+    document.getElementById('result').innerHTML = "다시풀어보기"; // 결과  지움
+}
+
+function showHide() {
+    var element = document.getElementById("show-hide");
+    if (element.style.display === "block") {
+        ; // 보이는 상태로바꿔줌
+        resetQuiz(); // 퀴즈를 리셋
+    } else {
+        element.style.display = "block"; // 숨겨진 상태에서 보이게
+    }
+}
+
+function calculateScore() {
+    var score = 0;
+    var answers = document.querySelectorAll('input[type="radio"]:checked');
+    for (var i = 0; i < answers.length; i++) {
+        score += parseInt(answers[i].value);
+    }
+    document.getElementById('result').innerHTML = "당신의 점수는 " + score * 25 + "점입니다.<br>";
+    document.getElementById('result').innerHTML += "정답과 함께 결과를 확인하세요!<br>";
+    document.getElementById('result').innerHTML += "<b>1. HTML은 무엇의 약자인가요?</b> 정답: a) <br>";
+    document.getElementById('result').innerHTML += "<b>2. HTML 문서를 작성할 때 사용하는 언어는?</b> 정답: a)<br>";
+    document.getElementById('result').innerHTML += "<b>3. HTML의 확장자는?</b> 정답: a)<br>";
+    document.getElementById('result').innerHTML += "<b>4. HTML의 버전 중 가장 최신 버전은?</b> 정답: d)<br>";
+}            //자바 끝부분 
+            </script> 
+           <div class="container mt-5">
+            <div class="card p-4">
+                <h2 class="text-center mb-4">HTML 퀴즈</h2>
+                <form id="quizForm">
+                    <!-- 1번 문제 -->
+                    <div class="mb-4">
+                        <h4>1. HTML은 무엇의 약자인가요?</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" id="q1_1" value="1">
+                            <label class="form-check-label" for="q1_1">a Hyper Text Markup Language</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" id="q1_2" value="0">
+                            <label class="form-check-label" for="q1_2">b Hyperlinks and Text Markup Language</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" id="q1_3" value="0">
+                            <label class="form-check-label" for="q1_3">c Home Tool Markup Language</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q1" id="q1_4" value="0">
+                            <label class="form-check-label" for="q1_4">d Hyper Tool Markup Language</label>
+                        </div>
+                    </div>
+                    <!-- 2번 문제 -->
+                    <div class="mb-4">
+                        <h4>2. HTML 문서를 작성할 때 사용하는 언어는?</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" id="q2_1" value="1">
+                            <label class="form-check-label" for="q2_1">a HTML</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" id="q2_2" value="0">
+                            <label class="form-check-label" for="q2_2">b CSS</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" id="q2_3" value="0">
+                            <label class="form-check-label" for="q2_3">c JavaScript</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q2" id="q2_4" value="0">
+                            <label class="form-check-label" for="q2_4">d Python</label>
+                        </div>
+                    </div>
+                    <!-- 3번 문제 -->
+                    <div class="mb-4">
+                        <h4>3. HTML의 확장자는?</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q3" id="q3_1" value="1">
+                            <label class="form-check-label" for="q3_1">a .html</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q3" id="q3_2" value="0">
+                            <label class="form-check-label" for="q3_2">b .css</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q3" id="q3_3" value="0">
+                            <label class="form-check-label" for="q3_3">c .js</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q3" id="q3_4" value="0">
+                            <label class="form-check-label" for="q3_4">d .txt</label>
+                        </div>
+                    </div>
+                    <!-- 4번 문제 -->
+                    <div class="mb-4">
+                        <h4>4. HTML의 버전 중 가장 최신 버전은?</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q4" id="q4_1" value="0">
+                            <label class="form-check-label" for="q4_1">a HTML5</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q4" id="q4_2" value="0">
+                            <label class="form-check-label" for="q4_2">b HTML6</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q4" id="q4_3" value="0">
+                            <label class="form-check-label" for="q4_3">c HTML7</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="q4" id="q4_4" value="1">
+                            <label class="form-check-label" for="q4_4">d HTML8</label>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="calculateScore()">Submit</button> 
+                </form>
+                <p id="result" class="mt-4"></p> 
+            </div>
+             
+          </form>
+       
+        <p id="result"></p>  <!-- 자바 -->
+        <script>  
+            function calculateScore() {    
+                var score = 0;
+                var answers = document.querySelectorAll('input[type="radio"]:checked');
+                for (var i = 0; i < answers.length; i++) {
+                    score += parseInt(answers[i].value);
+                }
+                document.getElementById('result').innerHTML = "당신의점수는 " + score * 25 + "점입니다.<br>";
+                document.getElementById('result').innerHTML += "정답과 함께 결과를 확인하세요!<br>";
+                document.getElementById('result').innerHTML += "<b>1. HTML은 무엇의 약자인가요?</b> 정답: a) <br>";
+                document.getElementById('result').innerHTML += "<b>2. HTML 문서를 작성할 때 사용하는 언어는?</b> 정답: a) <br>";
+                document.getElementById('result').innerHTML += "<b>3. HTML의 확장자는?</b> 정답: a) .<br>";
+                document.getElementById('result').innerHTML += "<b>4. HTML의 버전 중 가장 최신 버전은?</b> 정답: d) <br>";
+            }
+        </script>
+         <!-- 자바코드 -->
+    
+      </p>
+    </div>
+      </section>
+      
+    </section>
+    <footer class="bg-light p-4 text-center">
+      <div class="container">
+        <span class="text-muted">&copy; 2024. All rights reserved.</span>
+      </div>
+    </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+  
+  </html>
+
+    
+  </html>
+  

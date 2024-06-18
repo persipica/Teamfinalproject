@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 기술 설명 페이지</title>
+    <link rel="stylesheet" type="text/css" href="./html2,3.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* 댓글다는곳스타일 */
+      #comment_box {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #comment_box textarea {
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        resize: none;
+      }
+
+      #comment_list {
+        margin-top: 20px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .comment_item {
+        border-bottom: 1px solid #fa0c0c;
+        padding: 10px 0;
+      }
+      .comment_item button {
+        margin-left: 10px;
+      }
+      .comment_details {
+        display: flex;
+        align-items: center;
+      }
+      .comment_id {
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      /* 이미지 스타일 */
+      #reaction_section {
+        display: flex;
+        justify-content: center; /* 가운데 정렬 */
+        width: 70%;
+        margin: 20px auto;
+      }
+
+      .reaction_image {
+        width: 100px;
+        transition: transform 0.2s;
+        cursor: pointer;
+        margin: 0 20px; /* 이미지 사이의 간격 조정 */
+      }
+
+      .reaction_image:hover {
+        transform: scale(1.1);
+      }
+
+      .reaction_count {
+        text-align: center;
+      }
+      #like_image {
+        width: 60px; /* 좋아요크기조정 */
+        transition: transform 0.2s;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 네비게이션바 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><span class="text-danger">P</span>ort<span class="text-danger"
+            >F</span
+          >olio</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="html.html">HTML</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="css.html">CSS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">추천서적 및 강의</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="secon.html">Team members</a>
+            </li>
+            <a class="btn btn-dark" href="login.html" role="button">로그인</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="contents">
+      <section id="new1" class="text-center mb-5">
+        <h2>팀원소개</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <a>
+              <img src="img/human1.jpg" class="img-fluid" />
+              <p class="text-center">
+                최도형 - 맡은 역할: 추천 서적소개페이지 및 팀원 소개 페이지 제작
+              </p>
+
+              <h4>
+                <a href="https://github.com/begin306" target="_blank">github</a>
+              </h4>
+              <h4>
+                <a href="https://my-blog-nmyw.vercel.app/" target="_blank"
+                  >개인홈페이지</a
+                >
+              </h4>
+            </a>
+          </div>
+          <div class="col-md-6">
+            <a>
+              <img src="img/human2.jpg" class="img-fluid" />
+              <p class="text-center">강희수 - 맡은 역할:css 소개 페이지 제작</p>
+              <h4>
+                <a href="https://github.com/persipica" target="_blank"
+                  >github</a
+                >
+              </h4>
+              <h4>
+                <a href="https://finalportfollio.vercel.app/" target="_blank"
+                  >개인홈페이지</a
+                >
+              </h4>
+            </a>
+          </div>
+          <div class="col-md-6">
+            <a>
+              <img src="img/human3.jpg" class="img-fluid" />
+              <p class="text-center">박대희 - 맡은역할:html 소개 페이지 제작</p>
+            </a>
+            <h4>
+              <a href="https://github.com/parkdaihee" target="_blank">github</a>
+            </h4>
+            <h4>
+              <a href="https://last-projext.vercel.app/" target="_blank"
+                >개인홈페이지</a
+              >
+            </h4>
+          </div>
+          <div class="col-md-6">
+            <a>
+              <img src="img/human4.jpg" class="img-fluid" />
+              <p class="text-center">이규한 - 맡은역할:메인페이지 제작</p>
+              <h4>
+                <a href="https://github.com/leegyuhan99" target="_blank"
+                  >github</a
+                >
+              </h4>
+              <h4>
+                <a
+                  href="https://portfolio2-kappa-nine.vercel.app/"
+                  target="_blank"
+                  >개인홈페이지</a
+                >
+              </h4>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 댓글부분-->
+      <div id="view_title_box" class="text-center">
+        <span id="view_content">이페이지에 대해 만족하십니까?</span>
+      </div>
+
+      <!-- 이미지 반응 부 ㅂ분-->
+      <div id="reaction_section">
+        <div class="reaction_image_container">
+          <img
+            src="img/like.jpg"
+            alt="Like"
+            class="reaction_image"
+            id="like_image"
+          />
+          <div class="reaction_count" id="like_count">0</div>
+        </div>
+        <div class="reaction_image_container">
+          <img
+            src="img/bad.jpg"
+            alt="Bad"
+            class="reaction_image"
+            id="bad_image"
+          />
+          <div class="reaction_count" id="bad_count ">0</div>
+        </div>
+      </div>
+
+      <div id="comment_box">
+        <div class="text-center">
+          <input
+            type="text"
+            id="comment_id"
+            placeholder="아이디를 입력해주세요"
+            class="form-control mb-2"
+          />
+          <textarea
+            id="comment_text"
+            placeholder="댓글을 입력해주세요"
+            class="form-control mb-2"
+          ></textarea>
+          <button type="button" class="btn btn-primary" id="add_comment">
+            댓글남기기
+          </button>
+        </div>
+
+        <div id="comment_list"></div>
+      </div>
+    </main>
+
+    <footer class="bg-light p-4 text-center">
+      <div class="container">
+        <span class="text-muted">&copy; 2024. All rights reserved.</span>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const addCommentButton = document.getElementById('add_comment');
+        const commentId = document.getElementById('comment_id');
+        const commentText = document.getElementById('comment_text');
+        const commentList = document.getElementById('comment_list');
+
+        addCommentButton.addEventListener('click', function () {
+          const id = commentId.value.trim();
+          const comment = commentText.value.trim();
+
+          if (id && comment) {
+            const commentItem = document.createElement('div');
+            commentItem.classList.add('comment_item');
+
+            commentItem.innerHTML = `
+             
+           <div class="comment_details"><button type="button" class="btn btn-danger btn-sm delete_comment">삭제</button> 
+              <span class="comment_id">${id}</span>: <span class="comment_text">${comment}</span>
+            </div>`;
+
+            commentList.appendChild(commentItem);
+
+            commentId.value = '';
+            commentText.value = '';
+          } else {
+            alert('아이디와 댓글을 모두 입력해주세요.');
+          }
+        });
+
+        commentList.addEventListener('click', function (event) {
+          if (event.target.classList.contains('delete_comment')) {
+            const commentItem = event.target.closest('.comment_item');
+            commentItem.remove();
+          }
+        });
+
+        const likeImage = document.getElementById('like_image');
+        const badImage = document.getElementById('bad_image');
+        const likeCount = document.getElementById('like_count');
+        const badCount = document.getElementById('bad_count');
+
+        let likeClicked = false;
+        let badClicked = false;
+
+        likeImage.addEventListener('click', function () {
+          if (!likeClicked) {
+            if (!badClicked) {
+              likeCount.textContent = parseInt(likeCount.textContent) + 1;
+              likeImage.classList.add('clicked');
+              likeClicked = true;
+            } else {
+              alert('싫어요를 이미 클릭하셨습니다. 취소 후 다시 눌러주세요.');
+            }
+          } else {
+            likeCount.textContent = parseInt(likeCount.textContent) - 1;
+            likeImage.classList.remove('clicked');
+            likeClicked = false;
+          }
+        });
+
+        badImage.addEventListener('click', function () {
+          if (!badClicked) {
+            if (!likeClicked) {
+              badCount.textContent = parseInt(badCount.textContent) + 1;
+              badImage.classList.add('clicked');
+              badClicked = true;
+            } else {
+              alert('좋아요를 이미 클릭하셨습니다. 취소 후 다시 눌러주세요.');
+            }
+          } else {
+            badCount.textContent = parseInt(badCount.textContent) - 1;
+            badImage.classList.remove('clicked');
+            badClicked = false;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

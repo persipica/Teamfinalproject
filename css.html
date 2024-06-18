@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>teamProject | css</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+    
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .title-section {
+        height: 250px;
+        line-height: 125px;
+        color: #fff;
+        margin-bottom: 16px;
+        animation: changeBackground 5s infinite alternate;
+      }
+
+      @keyframes changeBackground {
+        0% {
+          background-color: #6a68db;
+        }
+        100% {
+          background-color: #007bff;
+        }
+      }
+
+      .input-group {
+        background-color: #f0f0f0; 
+        border-radius: 8px; 
+        padding: 10px; 
+      }
+
+     
+      .navbar-brand,
+      .nav-link {
+        color: #333; 
+      }
+
+      
+
+
+      .project-details {
+        border: 2px solid #ddd; 
+        padding: 20px; 
+        border-radius: 8px; 
+        margin-top: 10px;
+      }
+
+      .project-details h3 {
+        color: #007bff; 
+      }
+
+      .project-details p {
+        margin-bottom: 20px;
+      }
+
+      .project-details p strong {
+        color: #007bff; 
+      }
+
+      .col-md-7 {
+        position: relative;
+        padding-left: 800px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      /* 모달창 css 시작 */
+      .modal {
+      
+        background-color: rgba(0, 0, 0, 0.7);
+        pointer-events: none;
+        padding: 20px;
+
+   
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+
+     
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+     
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+       
+        max-width: 500px;
+        width: 100%;
+        height: 150px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+ 
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+        transform: scale(0.8);
+      }
+
+      .modal.show {
+     
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .modal.show .modal-content {
+     
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close:hover {
+        color: black;
+      }
+
+      /* 모달창 css 끝*/
+
+      
+      /* 검색창 css 시작*/
+      .search-in-body {
+        display: flex;
+        flex-direction: row;
+        background-color: #eee;
+        z-index: 999;
+        right: 20px;
+        width: 300px;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+      }
+
+      .search-box{
+        width: 40%;
+        border: 1px solid #eee;
+        padding: 3px 3px 3px 3px;
+        margin: 5px 3px 5px 5px;
+      }
+
+      .next-btn,.prev-btn,.clear-btn {
+        width: 10%;
+        padding: 0px 3px 0px 3px;
+        margin: 5px 3px 5px 3px;
+        border: 2px solid white;
+      }
+
+      .kwt-count {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        padding: 0px 3px 0px 3px;
+        margin: 5px 5px 5px 3px;
+        border: 2px solid white;
+      }
+
+      mark {
+        background: yellow;
+      }
+
+      mark.current {
+        background: orange;
+      }
+
+      .sib-absolute {
+        position: absolute;
+      }
+
+      .sib-fixed {
+        position: fixed;
+        top: 80px;
+      }
+
+      @media screen and (max-width: 800px) {
+	.search-in-body {
+		display: flex;
+		flex-direction: row;
+		position: fixed;
+		right: 20px;
+		left: 20px;
+		width: auto;
+		top: 75px;
+	}
+	.search-box {
+		width: 40%;
+		margin-left: 5px;
+		padding-left: 10px;
+	}
+	.next-btn,
+	.prev-btn {
+		width: 10%;
+		padding-right: 3px;
+		padding-left: 3px;
+		margin-right: 3px;
+		margin-left: 3px;
+		color: black;
+	}
+	.clear-btn {
+		width: 10%;
+		padding-right: 3px;
+		padding-left: 3px;
+		margin-right: 3px;
+		margin-left: 3px;
+		color: black;
+	}
+	.kwt-count {
+		width: 30%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-right: 3px;
+		padding-left: 3px;
+		margin-right: 5px;
+		margin-left: 3px;
+		color: black;
+	}
+}
+/* 검색창 css 끝 */
+    </style>
+
+<style>
+  .collapsible {
+      background-color: #b8b3b3;
+      color: rgb(15, 57, 57);
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      padding-bottom: 20px;
+  }
+  .active,
+  .collapsible:hover {
+      background-color: #999797;
+  }
+  .content {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      background-color: #f1f1f1;
+  }
+  .collapsible:after {
+      content: '\002B';
+      color: white;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+  }
+  .active:after {
+      content: "\2212";
+  }
+</style>
+
+
+
+
+
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><span class="text-danger">P</span>ort<span class="text-danger"
+            >F</span
+          >olio</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="html.html">HTML</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-danger" href="css.html">CSS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">추천서적 및 강의</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="secon.html">Team members</a>
+            </li>
+            <a class="btn btn-dark" href="login.html" role="button">로그인</a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="title-section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div
+              class="text-center text-white font-weight-bold"
+              style="font-family: 'Roboto', sans-serif; font-size: 2.25rem"
+            >
+              CSS
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row align-items-center">
+      
+        <div class="col-md-7">
+          <div class="search-in-body">
+            <input type="search" class="search-box" placeholder=" 본문 검색">
+            <button data-search="next" class="next-btn">↑</button>
+            <button data-search="prev" class="prev-btn">↓</button>
+            <button data-search="clear" class="clear-btn">X</button>
+            <span class="kwt-count">-</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+    <script>
+      document.body.onload = function(){
+        var $input = document.querySelector("input[type='search']"),
+            $clearBtn = document.querySelector("button[data-search='clear']"),
+            $prevBtn = document.querySelector("button[data-search='prev']"),
+            $nextBtn = document.querySelector("button[data-search='next']"),
+            $content = document.querySelector(".entry-content"),
+            $contentMark = new Mark($content),
+            $results,
+            currentClass = "current",
+            offsetTop = 200,
+            currentIndex = 0;
+        var variableCounter = 0;
+        var totalCount = 0;
+        
+        $input.addEventListener("input", function() {
+          var searchVal = this.value;
+          $contentMark.unmark({
+            done: function(totalMatches){
+              $contentMark.mark(searchVal, {
+                separateWordSerch: false,
+                acrossElements: true,
+                done: function(totalMatches) {
+                  $results = $content.querySelectorAll("Mark");
+                  totalCount = totalMatches;
+                  if (totalCount) {
+                    variableCounter = 1;
+                    $(".kwt-count").html(variableCounter+ "/"+totalCount);
+                  }
+                }
+              });
+            }
+          });
+        });
+
+        $nextBtn.addEventListener("click", prevNextHandler);
+        $prevBtn.addEventListener("click", prevNextHandler);
+        $nextBtn.after($prevBtn);
+        function prevNextHandler() {
+          if ($results.length) {
+            currentIndex += (this.dataset.search === "prev" ? -1 : 1);
+            if (currentIndex < 0){
+              currentIndex = $results.length -1;
+            }
+            if (currentIndex > $results.length -1){
+              currentIndex = 0;
+            }
+            jumpTo();
+          }
+        }
+
+        $("[data-search=next]").click(function() {
+          if (variableCounter < totalCount)
+            variableCounter = variableCounter +1;
+          else
+            variableCounter = 1;
+          $(".kwt-count").html(variableCounter+"/"+totalCount);
+        })
+
+        $("[data-search=prev]").click(function(){
+          if (variableCounter > 1)
+            variableCounter = variableCounter -1;
+          else  
+            variableCounter = totalCount;
+          $(".kwt-count").html(variableCounter+"/"+totalCount);
+        })
+
+        function jumpTo() {
+          if ($results.length) {
+            var position,
+                $current = $results[currentIndex];
+            $results.forEach($result => $result.classList.remove(currentClass));
+            if ($current) {
+              $current.classList.add(currentClass);
+              position = $current.offsetTop - offsetTop;
+              window.scrollTo(0, position);
+            }
+          }
+        }
+
+        $clearBtn.addEventListener("click", function() {
+          $contentMark.unmark();
+          $input.value = ""
+          $input.focus();
+          variableCounter = 0;
+          totalCount = 0;
+          $(".kwt-count").html("-");
+        });
+      };
+
+      $(document).ready(function () {
+        $(".search-in-body").addClass("sib-absolute");
+
+        var sib = $(".search-in-body").offset().top -165;
+        $(window).scroll(function () {
+          if ($(this).scrollTop() >= sib) {
+            $(".search-in-body").addClass("sib-fixed");
+            $(".search-in-body").removeClass("sib-absolute");
+          }
+          else {
+            $(".search-in-body").addClass("sib-absolute");
+            $(".search-in-body").removeClass("sib-fixed");
+          }
+        });
+      });
+    </script>
+
+    <div class="entry-content">
+     <div class="container">
+
+      <div class="project-details">
+        <h3 class="font-weight-bold">CSS란?</h3>
+
+        <p>
+          <strong>CSS (Cascading Style Sheets)</strong>는 HTML 및 XML과 같은
+          마크업 언어로 작성된 문서의 표현을 정의하는 스타일 시트 언어이다.
+          CSS는 문서의 디자인을 개선하고 더 나은 사용자 경험을 제공하기 위해
+          사용되며, 이를 통해 배경색, 글꼴, 간격 등의 스타일을 지정하고 웹
+          페이지의 레이아웃을 조정할 수 있다.
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <img src="img/html.png" class="card-img-top" alt="html" />
+              <div class="card-body">
+                <h5 class="card-title">HTML</h5>
+                <p class="card-text">HTML만 사용하여 만든 예시</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <img src="img/css.png" class="card-img-top" alt="html+css" />
+              <div class="card-body">
+                <h5 class="card-title">CSS</h5>
+                <p class="card-text">HTML코드에 CSS를 적용한 모습</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <h2>CSS의 주요 특징 및 기술 설명</h2>
+    <button type="button" class="collapsible" onclick="collapse(this);">선택자(Selectors)</button>
+    <div class="content">
+        <p>CSS는 HTML 요소에 스타일을
+          적용하기 위해 선택자를 사용한다. 선택자는 스타일을 적용할
+          HTML요소를 선택하는 데 사용된다. 예를 들어, 'h1' 선택자는 모든
+          'h1' 요소를 선택하고, 'class-name' 선택자는 지정된 클래스를 가진
+          모든 요소를 선택한다.</p>
+    </div>
+    <button type="button" class="collapsible" onclick="collapse(this);">속성(Properties)과 값(Values)</button>
+    <div class="content">
+        <p>CSS 속성은
+          스타일의 특성 측면을 나타내며, 값은 해당 속성의 특정 설정을
+          나타낸다. 예를 들어, 'color' 속성은 텍스트의 색상을 지정하고.
+          'font-size'는 텍스트의 크기를 조정한다.</p>
+    </div>
+    <button type="button" class="collapsible" onclick="collapse(this);">박스 모델(Box Model)</button>
+    <div class="content">
+        <p>CSS는 모든 HTML요소를
+          박스로 처리한다. 이 박스에는 콘텐츠 영역, 안쪽 여백(Padding),
+          테두리(border), 외부 여백(margin)이 포함된다. 이러한 속성을
+          조정하여 요소의 크기와 레이아웃을 제어할 수 있다.</p>
+    </div>
+    <button type="button" class="collapsible" onclick="collapse(this);">레이아웃(Layout)</button>
+    <div class="content">
+        <p>CSS를 사용하여 웹 페이지의
+          레이아웃을 설계할 수 있다. 이를 위해 'display', 'position',
+          'float', 'flexbox', 'grid'등의 속성을 사용하여 요소를 배치하고
+          정렬할 수 있다.</p>
+    </div>
+    <button type="button" class="collapsible" onclick="collapse(this);">미디어 쿼리(Medea Queries)</button>
+    <div class="content">
+        <p>CSS의 강력한 기능
+          중 하나로, 미디어 쿼리를 사용하여 장치의 특성에 따라 스타일을
+          다르게 적용할 수 있다. 이를 통해 반응형 웹 디자인을 구현할 수
+          있다.</p>
+    </div>
+    <button type="button" class="collapsible" onclick="collapse(this);">애니메이션과 변환(Animations and Transitions)</button>
+    <div class="content">
+        <p>CSS를 사용하여 요소의 상태변화를 부드럽게 만들거나 애니메이션을
+          추가할 수 있다. 'transition', 'animation' 속성을 사용하여 요소의
+          속성을 시간에 따라 변경하거나 애니메이션 효과를 부여할 수 있다.</p>
+    </div>
+    <button type="button" class="collapsible" onclick="collapse(this);">폰트 및 텍스트 스타일링(Font and Text Styling)</button>
+    <div class="content">
+        <p>CSS를 사용하여 텍스트의 글꼴, 크기, 스타일, 정렬 등을 조절할 수
+          있다. 또한, 텍스트의 그림자 효과나 강조 효과를 추가할 수도 있다.</p>
+    </div>
+    <button type="button" class="collapsible" onclick="collapse(this);">벤더 접두사(Vendor Prefixes)</button>
+    <div class="content">
+        <p>일부 브라우저는
+          최신 CSS의 기능을 완전히 지원하지 않을 수 있으므로, 특정 기능을
+          사용할 때는 각 브라우저에 대한 접두사를 포함해야 할수 있다. 이는
+          '-webkit-', '-moz-', '-ms-' 등의 접두사를 통해 이루어진다.</p>
+    </div>
+
+
+        <p><strong>CSS추천 교재</strong></p>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <img
+                src="img/book1.jpg"
+                class="card-img-top"
+                alt="HTML/CSS가 보이는 그림책"
+                style="width: 100%"
+              />
+              <div class="card-body">
+                <h5 class="card-title">HTML/CSS가 보이는 그림책</h5>
+                <p class="card-text">저자: ANK co., Ltd. 가격 : 17,820원</p>
+                <a href="https://product.kyobobook.co.kr/detail/S000212730091"
+                  >구매하기</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <img
+                src="img/book2.jpg"
+                class="card-img-top"
+                alt="누구나 쉽게 배우는 HTML5+CSS3"
+                style="width: 100%"
+              />
+              <div class="card-body">
+                <h5 class="card-title">누구나 쉽게 배우는 HTML5+CSS3</h5>
+                <p class="card-text">
+                  저자: 최준삼, 라임하우스 가격 : 17,000원
+                </p>
+                <a href="https://product.kyobobook.co.kr/detail/S000212226211"
+                  >구매하기</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <img
+                src="img/book3.jpg"
+                class="card-img-top"
+                alt="나의 첫 HTML & CSS 웹 디자인"
+                style="width: 100%"
+              />
+              <div class="card-body">
+                <h5 class="card-title">나의 첫 HTML & CSS 웹 디자인</h5>
+                <p class="card-text">
+                  저자: Capybara Design, 제이펍 가격 : 19,800원
+                </p>
+                <a href="https://product.kyobobook.co.kr/detail/S000209172307"
+                  >구매하기</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <button id="modalBtn">CSS에 대해 더 자세히 배우고 싶다면?</button>
+
+        <!-- 모달 창 -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close" id="closeBtn">&times;</span>
+            <ul>
+              <li>
+                W3Schools:
+                <a href="https://www.w3schools.com/"
+                  >https://www.w3schools.com/</a
+                >
+              </li>
+              <li>
+                Codepen:
+                <a href="https://codepen.io/pen/">https://codepen.io/pen/</a>
+              </li>
+              <li>
+                생활코딩:
+                <a href="https://opentutorials.org/course/1"
+                  >https://opentutorials.org/course/1</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <script>
+   
+          document.addEventListener("DOMContentLoaded", function () {
+        
+            var modalBtn = document.getElementById("modalBtn");
+            var modal = document.getElementById("myModal");
+            var closeBtn = document.getElementById("closeBtn");
+    
+      
+            function toggleModal() {
+              modal.classList.toggle("show");
+            }
+    
+        
+            modalBtn.addEventListener("click", toggleModal);
+            closeBtn.addEventListener("click", toggleModal);
+    
+            window.addEventListener("click", function (event) {
+            
+              if (event.target === modal) {
+                toggleModal();
+              }
+            });
+          });
+        </script>
+   
+        
+      </div>
+    </div>
+    </div>
+
+    
+  </div>
+
+  <footer class="bg-light p-4 text-center" style="margin-top: 20px;">
+    <div class="container">
+      <span class="text-muted">&copy; 2024. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    function collapse(element) {
+        var before = document.getElementsByClassName("active")[0]              
+        if (before && document.getElementsByClassName("active")[0] != element) {  
+            before.nextElementSibling.style.maxHeight = null;  
+            before.classList.remove("active");                 
+        }
+        element.classList.toggle("active");       
+
+        var content = element.nextElementSibling;
+        if (content.style.maxHeight != 0) {         
+            content.style.maxHeight = null;      
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";  
+        }
+    }
+</script>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
